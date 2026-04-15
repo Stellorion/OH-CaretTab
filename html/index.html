@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Handjet:wght@100&family=Noto+Sans&family=Roboto:wght@300&family=Source+Sans+3:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://www.youtube.com/?gl=IL" class="menu">YouTube</a></li>
+                <li><a href="https://discordapp.com/channels/@me" class="menu">Discord</a></li>
+                <li><a href="https://www.twitch.tv/directory" class="menu">Twitch</a></li>
+                <li><a href="https://web.whatsapp.com/" class="menu">Whatsapp</a></li>
+                <li><a href="https://open.spotify.com/" class="menu">Spotify</a></li>
+                <li><a href="https://mail.google.com/mail/u/0/#inbox" class="menu">Gmail</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="side-menu">
+        <ul>
+            <li><button data-calculator-btn class='bx bxs-calculator bx-flip-horizontal'></button></li>
+            <li><button data-unitConverter-btn class='bx bx-transfer'></button></li>
+            <li><button data-stopwatch-btn class='bx bx-stopwatch'></button></li>
+            <li><button data-passGen-btn class='bx bx-lock-open-alt'></button></li>
+        </ul>
+
+        <dialog data-calculatorDialog>
+            <div class="page">
+                <h1>Calculator</h1>
+                <div class="calculator-container">
+                    <div class="output">
+                        <div data-previous-operand class="previous-operand"></div>
+                        <div data-current-operand class="current-operand"></div>
+                    </div>
+                    <button data-all-clear class="operation span-two">AC</button>
+                    <button data-delete class="operation">DEL</button>
+                    <button data-operation class="operation">÷</button>
+                    <button data-number>1</button>
+                    <button data-number>2</button>
+                    <button data-number>3</button>
+                    <button data-operation class="operation">x</button>
+                    <button data-number>4</button>
+                    <button data-number>5</button>
+                    <button data-number>6</button>
+                    <button data-operation class="operation">+</button>
+                    <button data-number>7</button>
+                    <button data-number>8</button>
+                    <button data-number>9</button>
+                    <button data-operation class="operation">-</button>
+                    <button data-number class="operation">.</button>
+                    <button data-number>0</button>
+                    <button data-equals class="operation span-two">=</button>
+                </div>
+            </div>
+        </dialog>
+        
+        <dialog data-unitConverterDialog>
+            <div class="page">
+                <h1>Unit Converter</h1>
+                <div class="unitConverter-container">
+                    <div class="type-unit">
+                        <label for="">Select a type of unit</label>
+                        <select data-unit-type id="unit-type">
+                            <option value="area">Area</option>
+                            <option value="bytes">Data Sizes</option>
+                            <option value="length">Length</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="time">Time</option>
+                            <option value="volume">Volume</option>
+                            <option value="weight">Weight</option>
+                        </select>
+                    </div>
+                    <div class="from-unit">
+                        <label for="unit-from">From</label>
+                        <input type="text" data-unit-value/>
+                        <select data-unit-from id="unit-from"></select>
+                    </div>
+                    <div class="to-unit">
+                        <label for="unit-to">To</label>
+                        <select data-unit-to id="unit-to"></select>
+                    </div>
+                    <div class="unit-res">
+                        <h5>Your new value is:</h5>
+                        <pre data-unitRes></pre>
+                    </div>
+                </div>
+            </div>            
+        </dialog>
+        
+        <dialog data-stopwatchDialog>
+            <div class="page">
+                <h1>Stopwatch</h1>
+                <div class="sw-container">
+                    <div class="sw-utility">
+                        <button data-sw-start class="sw-btn sw-left">Start</button>
+                        <button data-sw-stop class="sw-btn">Pause</button>
+                        <button data-sw-reset class="sw-btn sw-right">Reset</button>
+                    </div>
+                    <div class="sw-timer">
+                        <span data-sw-hour class="sw-hour">00</span>
+                        <span class="sw-colon">:</span>
+                        <span data-sw-min class="sw-min">00</span>
+                        <span class="sw-colon">:</span>
+                        <span data-sw-sec class="sw-sec">00</span>
+                        <span class="sw-colon sw-milsec-colon">:</span>
+                        <span data-sw-milsec class="sw-milsec">00</span>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        
+        <dialog data-passGenDialog>
+            <div class="page">
+                <h1>Password Generator</h1>
+                <div class="passGen-container">
+                    <div class="passGen-utility">
+                        <label for="passGenRange" class="passGen-label">Length</label>
+                        <div class="passGen-slider">
+                            <output data-passGen-output class="passGen-value">12</output>
+                            <input type="range" data-passGen-slider id="passGenRange" class="passGen-input" min="8" max="24" value="12">
+                        </div>
+                    </div>
+                    <div class="passGen-generate">
+                        <button data-passGenBtn class="passGen-btn">Generate password</button>
+                    </div>
+                    <div class="passGen-res">
+                        <h5>Your generated password:</h5>
+                        <pre data-passGenPassword></pre>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+ 
+    </div>
+
+    <div class="content-container">
+        <div class="search">
+            <form id="searchForm" action="https://www.google.com/search" method="GET" target="_blank">
+                <input type="text" id="searchInput" name="q" placeholder="Search the web..." required>
+                <button type="submit"></box-icon></button>
+            </form>
+        </div>
+        <div class="time-info">
+            <div data-current-hour class="current-time"></div>
+            <span class="double-dot">:</span>
+            <div data-current-min class="current-time"></div>
+            <span class="double-dot">:</span>
+            <div data-current-sec class="current-time"></div>
+        </div>
+        <div class="day-info">
+            <div data-current-weekday class="current-date"></div>
+            <div data-current-month class="current-date"></div>
+            <div data-current-day class="current-date"></div>
+            <div data-current-year class="current-date"></div>
+        </div>
+    </div>
+
+
+    <footer></footer>
+    <script type="module" src="./../js/main.js"></script>
+</body>
+</html>
